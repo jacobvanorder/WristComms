@@ -8,7 +8,9 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController() <UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *textField;
 
 @end
 
@@ -21,15 +23,26 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+
+    self.textField.delegate = self;
     
     NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.capitalone.Watch1"];
     [sharedDefaults setObject:@"hello there" forKey:@"message"];
     [sharedDefaults synchronize];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    [self setNewMessage:self];
+    return YES;
+}
+
+- (IBAction)setNewMessage:(id)sender {
+    NSLog(@"Setting message to %@", self.textField.text);
+    
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.capitalone.Watch1"];
+    
+    [sharedDefaults setObject:self.textField.text forKey:@"message"];
 }
 
 @end

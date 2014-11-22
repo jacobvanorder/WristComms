@@ -56,17 +56,31 @@
     [self update];
 }
 
+
+- (void)defaultsChanged:(NSNotification *)info
+{
+    NSLog(@"Defaults changed");
+}
+
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
     NSLog(@"%@ will activate", self);
 
     self.sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.capitalone.Watch1"];
+    
+    // Register for notification of changes in defaults
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(defaultsChanged:)
+                                                 name:NSUserDefaultsDidChangeNotification
+                                               object:self.sharedDefaults];
 }
 
 - (void)didDeactivate {
     // This method is called when watch view controller is no longer visible
     NSLog(@"%@ did deactivate", self);
     self.sharedDefaults = nil;
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end
