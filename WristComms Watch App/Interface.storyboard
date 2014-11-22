@@ -17,10 +17,10 @@
                                 <action selector="update" destination="AgC-eL-Hgc" id="8qx-nr-M0f"/>
                             </connections>
                         </button>
-                        <button width="1" height="36.5" alignment="left" title="Reverse" id="Dow-hS-NxD">
+                        <button width="1" height="36.5" alignment="left" title="Change" id="Dow-hS-NxD">
                             <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="reverseMessage" destination="AgC-eL-Hgc" id="Njq-01-gEL"/>
+                                <action selector="changeMessage" destination="AgC-eL-Hgc" id="8Pj-B5-pNB"/>
                             </connections>
                         </button>
                     </items>

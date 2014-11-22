@@ -22,7 +22,7 @@
 {
     [super viewDidAppear:animated];
     
-    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.sharedTest"];
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.capitalone.Watch1"];
     [sharedDefaults setObject:@"hello there" forKey:@"message"];
     [sharedDefaults synchronize];
 }

@@ -13,6 +13,9 @@
 
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *label;
 
+@property (nonatomic) NSUserDefaults *sharedDefaults;
+@property (nonatomic) NSString *message;
+
 @end
 
 
@@ -29,22 +32,41 @@
     return self;
 }
 
-- (IBAction)update {
-    // Read NSUserDefaults to get the message
+- (NSString *)sharedMessage {
+    NSString *message = [self.sharedDefaults objectForKey:@"message"];
+
+    return message;
 }
 
-- (IBAction)reverseMessage {
-    
+- (void)setMessage:(NSString *)newMessage {
+    [self.sharedDefaults setObject:newMessage forKey:@"message"];
+}
+
+- (IBAction)update {
+    // Read NSUserDefaults to get the message
+    NSString *msg = self.sharedMessage;
+    NSLog(@"Message is %@", msg);
+    self.label.text = msg;
+}
+
+- (IBAction)changeMessage {
+    NSString *msg = self.sharedMessage;
+    NSString *newMsg = [msg stringByAppendingString:@"+"];
+    self.message = newMsg;
+    [self update];
 }
 
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
     NSLog(@"%@ will activate", self);
+
+    self.sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.capitalone.Watch1"];
 }
 
 - (void)didDeactivate {
     // This method is called when watch view controller is no longer visible
     NSLog(@"%@ did deactivate", self);
+    self.sharedDefaults = nil;
 }
 
 @end
