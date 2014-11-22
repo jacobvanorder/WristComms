@@ -16,7 +16,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.sharedTest"];
+    [sharedDefaults setObject:@"hello there" forKey:@"message"];
+    [sharedDefaults synchronize];
 }
 
 - (void)didReceiveMemoryWarning {

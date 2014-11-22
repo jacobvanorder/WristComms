@@ -85,6 +85,8 @@
 		CEB2294B1A21222300ED6B81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEB2294C1A21222300ED6B81 /* Interface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
 		CEB2294E1A21222300ED6B81 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CEB2295A1A21270300ED6B81 /* WristComms.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WristComms.entitlements; sourceTree = "<group>"; };
+		CEB2295B1A21276700ED6B81 /* WristComms WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "WristComms WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 		CEB2290C1A2121FE00ED6B81 /* WristComms */ = {
 			isa = PBXGroup;
 			children = (
+				CEB2295A1A21270300ED6B81 /* WristComms.entitlements */,
 				CEB229111A2121FE00ED6B81 /* AppDelegate.h */,
 				CEB229121A2121FE00ED6B81 /* AppDelegate.m */,
 				CEB229141A2121FE00ED6B81 /* ViewController.h */,
@@ -188,6 +191,7 @@
 		CEB2293B1A21222300ED6B81 /* WristComms WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				CEB2295B1A21276700ED6B81 /* WristComms WatchKit Extension.entitlements */,
 				CEB2293E1A21222300ED6B81 /* InterfaceController.h */,
 				CEB2293F1A21222300ED6B81 /* InterfaceController.m */,
 				CEB229411A21222300ED6B81 /* Images.xcassets */,
@@ -306,6 +310,12 @@
 				TargetAttributes = {
 					CEB229091A2121FE00ED6B81 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 5T2T83LMF3;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					CEB229221A2121FE00ED6B81 = {
 						CreatedOnToolsVersion = 6.2;
@@ -313,6 +323,12 @@
 					};
 					CEB229361A21222300ED6B81 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 5T2T83LMF3;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					CEB229441A21222300ED6B81 = {
 						CreatedOnToolsVersion = 6.2;
@@ -525,9 +541,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WristComms/WristComms.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = WristComms/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -535,9 +555,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WristComms/WristComms.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = WristComms/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -610,6 +634,9 @@
 		CEB229571A21222300ED6B81 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "WristComms WatchKit Extension/WristComms WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -617,6 +644,7 @@
 				INFOPLIST_FILE = "WristComms WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -624,9 +652,13 @@
 		CEB229581A21222300ED6B81 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "WristComms WatchKit Extension/WristComms WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "WristComms WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

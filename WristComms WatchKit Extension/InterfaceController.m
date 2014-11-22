@@ -11,6 +11,8 @@
 
 @interface InterfaceController()
 
+@property (weak, nonatomic) IBOutlet WKInterfaceLabel *label;
+
 @end
 
 
@@ -25,6 +27,14 @@
         
     }
     return self;
+}
+
+- (IBAction)update {
+    // Read NSUserDefaults to get the message
+}
+
+- (IBAction)reverseMessage {
+    
 }
 
 - (void)willActivate {
