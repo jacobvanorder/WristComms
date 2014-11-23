@@ -60,6 +60,7 @@
 - (void)defaultsChanged:(NSNotification *)info
 {
     NSLog(@"Defaults changed");
+    [self update];
 }
 
 - (void)willActivate {
@@ -69,6 +70,9 @@
     self.sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.capitalone.Watch1"];
     
     // Register for notification of changes in defaults
+    // This doesn't seem to work yet -- if you change
+    // the defaults from the host app the notification
+    // does not happen.
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(defaultsChanged:)
                                                  name:NSUserDefaultsDidChangeNotification

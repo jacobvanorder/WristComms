@@ -31,6 +31,12 @@
     [sharedDefaults synchronize];
 }
 
+- (IBAction)loadMessage:(id)sender {
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.capitalone.Watch1"];
+    NSString *msg = [sharedDefaults objectForKey:@"message"];
+    self.textField.text = msg;
+}
+
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     [self setNewMessage:self];
@@ -43,6 +49,7 @@
     NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.capitalone.Watch1"];
     
     [sharedDefaults setObject:self.textField.text forKey:@"message"];
+    [sharedDefaults synchronize];
 }
 
 @end
