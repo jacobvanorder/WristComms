@@ -25,10 +25,7 @@
     [super viewDidAppear:animated];
 
     self.textField.delegate = self;
-    
-    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.capitalone.Watch1"];
-    [sharedDefaults setObject:@"hello there" forKey:@"message"];
-    [sharedDefaults synchronize];
+    [self loadMessage:self];
 }
 
 - (IBAction)loadMessage:(id)sender {
