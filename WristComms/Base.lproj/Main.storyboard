@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6221" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6221" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -25,13 +25,30 @@
                                     <action selector="setNewMessage:" destination="vXZ-lx-hvc" eventType="valueChanged" id="eud-hS-MOM"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qwg-Pv-AOp">
-                                <rect key="frame" x="16" y="58" width="35" height="30"/>
-                                <state key="normal" title="Load">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qwg-Pv-AOp">
+                                <rect key="frame" x="16" y="58" width="96" height="30"/>
+                                <state key="normal" title="Load Defaults">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="loadMessage:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hOq-dS-9AU"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3PP-sD-gwA">
+                                <rect key="frame" x="16" y="102" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="saveTextToAppGroupFile:" destination="vXZ-lx-hvc" eventType="valueChanged" id="ifh-IH-B2Y"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZg-sN-2bW">
+                                <rect key="frame" x="16" y="140" width="96" height="30"/>
+                                <state key="normal" title="Load Text File">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadTextFile:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="tWU-20-R69"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -39,10 +56,18 @@
                         <constraints>
                             <constraint firstItem="dhd-rF-VuW" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="2ei-zt-QOv"/>
                             <constraint firstItem="dhd-rF-VuW" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="5LQ-EX-KXz"/>
+                            <constraint firstItem="Qwg-Pv-AOp" firstAttribute="leading" secondItem="dhd-rF-VuW" secondAttribute="leading" id="Rbf-d8-yLW"/>
+                            <constraint firstItem="3PP-sD-gwA" firstAttribute="top" secondItem="Qwg-Pv-AOp" secondAttribute="bottom" constant="14" id="YvA-gl-OyZ"/>
+                            <constraint firstItem="lZg-sN-2bW" firstAttribute="top" secondItem="3PP-sD-gwA" secondAttribute="bottom" constant="8" id="aaR-v0-qIT"/>
+                            <constraint firstItem="Qwg-Pv-AOp" firstAttribute="top" secondItem="dhd-rF-VuW" secondAttribute="bottom" constant="8" id="ac3-VY-1al"/>
                             <constraint firstItem="dhd-rF-VuW" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="bow-58-8pK"/>
+                            <constraint firstItem="dhd-rF-VuW" firstAttribute="leading" secondItem="3PP-sD-gwA" secondAttribute="leading" id="ftG-E4-UzD"/>
+                            <constraint firstItem="dhd-rF-VuW" firstAttribute="trailing" secondItem="3PP-sD-gwA" secondAttribute="trailing" id="hw4-QY-tc2"/>
+                            <constraint firstItem="lZg-sN-2bW" firstAttribute="leading" secondItem="3PP-sD-gwA" secondAttribute="leading" id="p6H-9r-5mw"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="secondaryTextField" destination="3PP-sD-gwA" id="PdD-xe-6JU"/>
                         <outlet property="textField" destination="dhd-rF-VuW" id="iJt-z3-lew"/>
                     </connections>
                 </viewController>

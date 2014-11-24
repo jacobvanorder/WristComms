@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76C6CD561A23996200D66C6F /* FileManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C6CD551A23996200D66C6F /* FileManagerController.m */; };
 		CEB229101A2121FE00ED6B81 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB2290F1A2121FE00ED6B81 /* main.m */; };
 		CEB229131A2121FE00ED6B81 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB229121A2121FE00ED6B81 /* AppDelegate.m */; };
 		CEB229161A2121FE00ED6B81 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB229151A2121FE00ED6B81 /* ViewController.m */; };
@@ -62,6 +63,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		76C6CD541A23996200D66C6F /* FileManagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileManagerController.h; sourceTree = "<group>"; };
+		76C6CD551A23996200D66C6F /* FileManagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileManagerController.m; sourceTree = "<group>"; };
 		CEB2290A1A2121FE00ED6B81 /* WristComms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WristComms.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB2290E1A2121FE00ED6B81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEB2290F1A2121FE00ED6B81 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -194,6 +197,8 @@
 				CEB2295B1A21276700ED6B81 /* WristComms WatchKit Extension.entitlements */,
 				CEB2293E1A21222300ED6B81 /* InterfaceController.h */,
 				CEB2293F1A21222300ED6B81 /* InterfaceController.m */,
+				76C6CD541A23996200D66C6F /* FileManagerController.h */,
+				76C6CD551A23996200D66C6F /* FileManagerController.m */,
 				CEB229411A21222300ED6B81 /* Images.xcassets */,
 				CEB2293C1A21222300ED6B81 /* Supporting Files */,
 			);
@@ -310,7 +315,7 @@
 				TargetAttributes = {
 					CEB229091A2121FE00ED6B81 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 5T2T83LMF3;
+						DevelopmentTeam = 8X4DYCSP4Z;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -323,7 +328,7 @@
 					};
 					CEB229361A21222300ED6B81 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 5T2T83LMF3;
+						DevelopmentTeam = 8X4DYCSP4Z;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -418,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEB229401A21222300ED6B81 /* InterfaceController.m in Sources */,
+				76C6CD561A23996200D66C6F /* FileManagerController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,6 +688,7 @@
 				CEB2292F1A2121FE00ED6B81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CEB229301A2121FE00ED6B81 /* Build configuration list for PBXNativeTarget "WristCommsTests" */ = {
 			isa = XCConfigurationList;
@@ -690,6 +697,7 @@
 				CEB229321A2121FE00ED6B81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CEB229531A21222300ED6B81 /* Build configuration list for PBXNativeTarget "WristComms Watch App" */ = {
 			isa = XCConfigurationList;
@@ -698,6 +706,7 @@
 				CEB229551A21222300ED6B81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CEB229561A21222300ED6B81 /* Build configuration list for PBXNativeTarget "WristComms WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -706,6 +715,7 @@
 				CEB229581A21222300ED6B81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

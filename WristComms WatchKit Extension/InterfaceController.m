@@ -8,6 +8,9 @@
 
 #import "InterfaceController.h"
 
+//static NSString *const JBSuiteNameString = @"group.com.capitalone.Watch1";
+static NSString *const JBSuiteNameString = @"group.sushiGrass.WatchComms";
+static NSString *const JBSuiteDefaultsKeyString = @"message";
 
 @interface InterfaceController()
 
@@ -33,13 +36,13 @@
 }
 
 - (NSString *)sharedMessage {
-    NSString *message = [self.sharedDefaults objectForKey:@"message"];
+    NSString *message = [self.sharedDefaults objectForKey:JBSuiteDefaultsKeyString];
 
     return message;
 }
 
 - (void)setMessage:(NSString *)newMessage {
-    [self.sharedDefaults setObject:newMessage forKey:@"message"];
+    [self.sharedDefaults setObject:newMessage forKey:JBSuiteDefaultsKeyString];
 }
 
 - (IBAction)update {
@@ -67,7 +70,7 @@
     // This method is called when watch view controller is about to be visible to user
     NSLog(@"%@ will activate", self);
 
-    self.sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.capitalone.Watch1"];
+    self.sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:JBSuiteNameString];
     
     // Register for notification of changes in defaults
     // This doesn't seem to work yet -- if you change
